@@ -23,7 +23,7 @@ workflow ABERRANTEXPRESSION {
 
     // TODO nf-core: substitute modules here for the modules of your subworkflow
 
-    SAMTOOLS_SORT ( ch_bam )
+    ABEXP_PREPROCESS ( ch_bam )
     ch_versions = ch_versions.mix(SAMTOOLS_SORT.out.versions.first())
 
     SAMTOOLS_INDEX ( SAMTOOLS_SORT.out.bam )
